@@ -4,6 +4,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import static java.lang.Thread.sleep;
 
+/**
+ * 可中断
+ */
 public class LockInterrupt implements Runnable {
     ReentrantLock lock1 = new ReentrantLock();
     ReentrantLock lock2 = new ReentrantLock();

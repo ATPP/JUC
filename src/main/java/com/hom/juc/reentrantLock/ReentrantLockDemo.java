@@ -1,8 +1,10 @@
 package com.hom.juc.reentrantLock;
 
-import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * ReentrantLock
+ */
 public class ReentrantLockDemo implements Runnable {
 
     ReentrantLock reentrantLock = new ReentrantLock();

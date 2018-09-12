@@ -3,6 +3,9 @@ package com.hom.juc.reentrantLock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 可限时 tryLock
+ */
 public class TimeLock implements Runnable {
     ReentrantLock lock = new ReentrantLock();
 
