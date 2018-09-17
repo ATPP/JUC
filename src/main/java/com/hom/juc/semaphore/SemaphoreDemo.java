@@ -9,13 +9,15 @@ public class SemaphoreDemo implements Runnable {
     @Override
     public void run() {
         try {
-            semaphore.acquire();
+//            semaphore.acquire();
+            semaphore.acquire(2);
             System.out.println(Thread.currentThread().getName());
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            semaphore.release();
+//            semaphore.release();
+            semaphore.release(2);
         }
     }
 
