@@ -7,7 +7,7 @@ public class KFC {
 
     String[] names = {"汉堡", "薯条", "可乐", "鸡翅"};
     final int Max = 20;
-    List<Food> foods = new ArrayList<>();
+    List<Food> foods = new ArrayList<Food>();
 
     public void produce(int num) {
         synchronized (this) {
