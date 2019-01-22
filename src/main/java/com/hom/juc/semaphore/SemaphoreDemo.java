@@ -4,12 +4,14 @@ import java.util.concurrent.*;
 
 public class SemaphoreDemo implements Runnable {
 
+//    初始许可数量
     Semaphore semaphore = new Semaphore(5);
 
     @Override
     public void run() {
         try {
 //            semaphore.acquire();
+//            获取许可
             semaphore.acquire(2);
             System.out.println(Thread.currentThread().getName());
             Thread.sleep(2000);
@@ -17,6 +19,7 @@ public class SemaphoreDemo implements Runnable {
             e.printStackTrace();
         } finally {
 //            semaphore.release();
+//            释放许可
             semaphore.release(2);
         }
     }
