@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 仅运行一秒的素数生成器
+ * 使用boolean标志取消线程
  */
 public class PrimeGenerator implements Runnable {
 
