@@ -1,6 +1,5 @@
 package com.hom.juc.stopThread.log;
 
-import java.io.PipedReader;
 import java.io.PrintWriter;
 import java.util.concurrent.BlockingQueue;
 
@@ -22,11 +21,14 @@ public class LogService {
         loggerThread.interrupt();
     }
 
-    public void log(String msg) {
+    public void log(String msg) throws InterruptedException {
         synchronized (this) {
-            isShutdown = true;
+            if (isShutdown){
+                throw new IllegalStateException();
+            }
+            ++reservations;
         }
-        loggerThread.interrupt();
+        queue.put(msg);
     }
 
     public class LoggerThread extends Thread {
