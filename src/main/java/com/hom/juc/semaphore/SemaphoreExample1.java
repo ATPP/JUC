@@ -12,11 +12,11 @@ public class SemaphoreExample1 {
 //        ExecutorService threadPool = Executors.newFixedThreadPool(300);
         ExecutorService threadPool = new ThreadPoolExecutor(20,30,60L, TimeUnit.SECONDS,new ArrayBlockingQueue<>(13));
         // 一次只能允许执行的线程数量。
-        final Semaphore semaphore = new Semaphore(10);
+        final Semaphore semaphore = new Semaphore(20);
 
         for (int i = 0; i < threadCount; i++) {
             final int threadnum = i;
-            threadPool.execute(() -> {// Lambda 表达式的运用
+            threadPool.submit(() -> {// Lambda 表达式的运用
                 try {
 //                    semaphore.acquire();// 获取一个许可，所以可运行线程数量为20/1=20
 //                    test(threadnum);

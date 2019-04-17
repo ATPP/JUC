@@ -10,6 +10,6 @@ public class LetOneStop implements Animal.Callback {
 
     @Override
     public void win() {
-        animal.stop();
+        animal.interrupt();
     }
 }

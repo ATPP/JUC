@@ -5,10 +5,12 @@ public class RunDemo {
     public static void main(String[] args) throws InterruptedException {
         long startTime = System.currentTimeMillis();
         DemoThread demoThread = new DemoThread();
+        demoThread.start();
+
         DemoThread1 demoThread1 = new DemoThread1();
         Thread thread = new Thread(demoThread1);
-        demoThread.start();
         thread.start();
+
         demoThread.join();
         thread.join();
         long endTime = System.currentTimeMillis();
